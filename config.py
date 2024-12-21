@@ -1,12 +1,12 @@
 env_vars = {
     # Get from my.telegram.org
-    "API_HASH": "c0da9c346d2c45dbc7ec49a05da9b2b6",
+    "API_HASH": "f757ca005f4a320bcea5ced947bbff5e",
     # Get from my.telegram.org
-    "API_ID": "13675555",
+    "API_ID": "27011028",
     # Get from @BotFather
-    "BOT_TOKEN": "5555986769:AAFtx_TP6YJxckRMKvWmZrcteSLR5EDkRlI",
+    "BOT_TOKEN": "7505997121:AAF2Wf6naoMWdEJ1VVWgDHQNgf48Jsv6_DE", 
     # Get from tembo.io
-    "DATABASE_URL_PRIMARY": "postgres://avnadmin:AVNS_u7YLST7hs-iUBX5w6nh@pg-29adbac6-kagut67.j.aivencloud.com:16924/defaultdb",
+    "DATABASE_URL_PRIMARY": "postgresql://postgres:k0edUULYD0G6vZy0@fruitfully-legitimate-lemur.data-1.use1.tembo.io:5432/postgres",
     # Logs channel username without @
     "CACHE_CHANNEL": "",
     # Force subs channel username without @
@@ -14,15 +14,15 @@ env_vars = {
     # {chap_num}: Chapter Number
     # {chap_name}: Manga Name
     # Example: Chapter {chap_num} {chap_name} @Manhwa_Arena
-    "FNAME": "Ch - {chap_num} {chap_name} @Manga_Universe",
+    "FNAME": "{chap_num}. {chap_name}",
     # Thumb Path (Optional)
-    "THUMB": "",
+    "THUMB": "thumbnail.jpg", 
     # Add authorized user IDs, separated by commas in a list
-    "SUDOS": [5591954930, 1355560957, 5563322600],
+    "SUDOS": [1355560957],
     #Your repo branch
     "UPSTREAM_BRANCH": "master",
     # Your repo link
-    "UPSTREAM_REPO": "https://github.com/kagut57/MangaBot-1/"
+    "UPSTREAM_REPO": "https://github.com/Joyboy125/MangaBot-1.git"
 }
 
 # Determine the database URL (default to SQLite if not provided)

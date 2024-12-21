@@ -460,7 +460,10 @@ async def send_manga_chapter(client: Client, chapter, chat_id):
             ch_num = chapter.name.replace("Chapter", "Ch").replace("chapter", "Ch")
             full_name = f'{ch_num} - {chapter.manga.name}'
             ch_name = f'{ch_num} - {truncate_filename(chapter.manga.name, 50)}'
-            success_caption = f"<blockquote><b>{full_name}.pdf</b></blockquote>"
+            success_caption = f"<blockquote><b>{full_name}\n➤ @Manhwa_Realms</b></blockquote>"
+
+            success_caption = re.sub(r'(\d+)', lambda x: f"{int(x.group()):03}", success_caption, count=1)
+            ch_name = re.sub(r'(\d+)', lambda x: f"{int(x.group()):03}", ch_name, count=1)
             
     except Exception as e:
         logger.exception(f'Error while cutting the name: {e}')
@@ -504,10 +507,13 @@ async def send_manga_chapter(client: Client, chapter, chat_id):
         media_docs[-1].caption = success_caption
         messages = await retry_on_flood(client.send_media_group)(chat_id, media_docs)
 
-    channel = env_vars.get('CACHE_CHANNEL')
-    if messages and channel:
-        for msg in messages:
-            await msg.copy(channel)
+    channel =  -1002155793773
+    try: 
+        if messages and channel:
+            for msg in messages:
+                await msg.copy(channel)
+    except Exception as e:
+        logger.exception(f'Error creating CBZ for')
 
     # Save file IDs to the database
     if download and media_docs:
