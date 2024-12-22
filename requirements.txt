@@ -9,7 +9,7 @@ asyncpg
 psycopg2-binary
 aiosqlite
 fpdf2~=2.6.0
-sqlalchemy==1.4.47
+sqlalchemy==1.4.46
 psutil~=5.9.0
 alembic==1.7.7
 loguru
