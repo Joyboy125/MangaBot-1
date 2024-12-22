@@ -455,7 +455,11 @@ async def send_manga_chapter(client: Client, chapter, chat_id):
             truncated_manga_name = truncate_filename(chapter.manga.name, available_len)
             ch_name = env_vars["FNAME"].replace("{chap_num}", str(chap_num)).replace("{chap_name}", truncated_manga_name)
             
-            success_caption = f"<blockquote><b>{full_ch_name}.pdf</b></blockquote>"
+            success_caption = f"<blockquote><b>{full_name}\n➤ @Manhwa_Realms</b></blockquote>"
+            
+            success_caption = re.sub(r'(\d+)', lambda x: f"{int(x.group()):03}", success_caption, count=1)
+            ch_name = re.sub(r'(\d+)', lambda x: f"{int(x.group()):03}", ch_name, count=1)
+
         else:
             ch_num = chapter.name.replace("Chapter", "Ch").replace("chapter", "Ch")
             full_name = f'{ch_num} - {chapter.manga.name}'

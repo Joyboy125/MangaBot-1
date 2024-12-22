@@ -9,5 +9,5 @@ async def run_web_server():
     app.add_routes([web.get("/", root_handler)])
     runner = web.AppRunner(app)
     await runner.setup()
-    PORT = 3000
+    PORT = 5000
     await web.TCPSite(runner, "0.0.0.0", PORT).start()
