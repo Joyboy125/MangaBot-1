@@ -11,7 +11,7 @@ aiosqlite
 fpdf2~=2.6.0
 sqlalchemy==1.4.47
 psutil~=5.9.0
-alembic
+alembic==1.7.7
 loguru
 flask
 gunicorn
